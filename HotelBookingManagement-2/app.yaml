@@ -54,12 +54,15 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: hma-service
+  name: hma
+  labels: 
+    name: hma
 spec:
   selector: 
     app: hma
   ports:
-    - protocol: "TCP"
+    - protocol: TCP
       port: 8318
       targetPort: 8318
+      nodePort: 31999
   type: NodePort
